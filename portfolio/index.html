@@ -24,6 +24,17 @@
     <meta property="og:type" content="article">
     <meta property="article:tag" content="Me">
     <style>
+        @font-face {
+            font-family: "Fira Sans Custom";
+            src: url("./FiraSans-Regular.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Fira Sans Custom", sans-serif;
+        }
+
         .app-header {
             padding-top: .35rem;
         }
@@ -176,8 +187,7 @@
                 <p>FanLAB is an educational simulator built with Unreal Engine, intended to introduce high school
                     students to the use of tools and equipment from various disciplines. It features a customizable
                     avatar controlled both in third and first person, which students use to join multiplayer sessions
-                    created by a professor to do many activities in the form of workbenches, and play with vehicles,
-                    programmed from the ground with blueprints.
+                    created by a professor to do many activities in the form of workbenches, and play with vehicles.
                     One of my tasks was to incorporate vehicles with a nice arcade movement and feel, from scratch into
                     the application, as a way for students to have some fun in a sandbox manner while idle or between
                     tasks. This particular feature was a success.</p>
