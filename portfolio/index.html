@@ -81,6 +81,29 @@
         .app-header-social {
             margin-top: .35rem;
         }
+
+        .inline-code-copy {
+            display: inline-flex;
+            align-items: center;
+            gap: .35em;
+            white-space: nowrap;
+            font-weight: 700;
+        }
+
+        .copy-code-button {
+            font: inherit;
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1;
+            padding: 0;
+            margin-left: .2em;
+            border: 0;
+            background: transparent;
+            color: #a8ff61;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: .12em;
+        }
     </style>
 </head>
 
@@ -168,7 +191,8 @@
                 <p><a href=https://gaming.faniot.com.ar/monumento-a-la-bandera-vr />Product Website</a></p>
                 <p><img src="https://mautar55.github.io/screen_monumento.jpg" alt=monument_screenshot></p>
                 <h2 id=iguazufalls-deathmatch-presentacion>IguazuFalls Deathmatch - Fortnite Experience</h2>
-                <p>A Free for All Fortnite combat map, featuring iconic elements from Misiones, Argentina.</p>
+                <p>A Free for All Fortnite combat map, featuring iconic elements from Misiones, Argentina. 
+                    <br><a href=https://fortnite.com/@faniot/1742-9416-0590>Play Here!</a> or with the code <span class="inline-code-copy">1742-9416-0590<button class="copy-code-button" type="button" data-copy-code="1742-9416-0590" aria-label="Copy island code 1742-9416-0590">Copy</button></span></p>
                 <div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                         loading=eager referrerpolicy=strict-origin-when-cross-origin
@@ -176,7 +200,9 @@
                         style=position:absolute;top:0;left:0;width:100%;height:100%;border:0
                         title="YouTube video"></iframe></div>
                 <h2 id=metabonk-survival-fortnite-experience>METABONK SURVIVAL - Fortnite Experience</h2>
-                <p>A reenvision of the concepts of popular survival games with lots of enemies, to fit within the Fortnite platform.</p>
+                <p>A reenvision of the concepts of popular survival games with lots of enemies, to fit within the Fortnite platform. 
+                    <br>
+                    <a href=https://fortnite.com/@faniot/1100-9172-9593> Play Here!</a> or with the code <span class="inline-code-copy">1100-9172-9593<button class="copy-code-button" type="button" data-copy-code="1100-9172-9593" aria-label="Copy island code 1100-9172-9593">Copy</button></span></p></p>
                 <div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                         loading=eager referrerpolicy=strict-origin-when-cross-origin
@@ -232,6 +258,22 @@
             <div class=post-footer></div>
         </article>
     </main>
+    <script>
+        document.querySelectorAll('.copy-code-button').forEach(function (button) {
+            button.addEventListener('click', async function () {
+                var originalText = button.textContent;
+                try {
+                    await navigator.clipboard.writeText(button.dataset.copyCode);
+                    button.textContent = 'Copied';
+                } catch (error) {
+                    button.textContent = 'Failed';
+                }
+                window.setTimeout(function () {
+                    button.textContent = originalText;
+                }, 1200);
+            });
+        });
+    </script>
 </body>
 
 </html>
